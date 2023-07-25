@@ -3,6 +3,18 @@ view: order_items {
     ;;
   drill_fields: [id]
 
+  filter: filter_state {
+    type: string
+    suggest_explore: users
+    suggest_dimension: users.state
+  }
+
+  filter: filter_country {
+    type: string
+    suggest_explore: users
+    suggest_dimension: users.country
+  }
+
   dimension: id {
     primary_key: yes
     type: number
